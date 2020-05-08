@@ -1,8 +1,7 @@
 import React from 'react';
-import { Card, CardContent, Typography, Grid } from '@material-ui/core';
+
 import styles from './Cards.module.css';
 import CountUp from 'react-countup';
-import cx from 'classnames';
 
 const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
   if (!confirmed) {
@@ -15,10 +14,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
   const remainInfected = () => {
     return confirmed.value - recovered.value - deaths.value;
   };
-  const recoveredPerInfection = () => {
-    return (recovered.value / confirmed.value) * 100;
-  };
-  // console.log(remainInfected());
+
   return (
     <React.Fragment>
       <div className={styles.lastUpdated}>
