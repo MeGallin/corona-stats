@@ -1,4 +1,16 @@
-.formControl {
+.inputEl {
+  border-top: lightgray solid 1px;
   width: 30%;
-  margin-bottom: 30px !important;
+  padding: 0.2% 0 0 0;
+  margin-bottom: 12px !important;
+  margin-top: 30px !important;
+}
+.MuiFormControlRoot {
+  width: 100% !important;
+}
+
+@media (max-width: 760px) {
+  .inputEl {
+    width: 100%;
+  }
 }

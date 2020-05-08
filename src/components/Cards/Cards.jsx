@@ -9,86 +9,82 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
     return 'loading...';
   }
 
+  const deathsPerInfections = () => {
+    return (deaths.value / confirmed.value) * 100;
+  };
+  const remainInfected = () => {
+    return confirmed.value - recovered.value - deaths.value;
+  };
+  const recoveredPerInfection = () => {
+    return (recovered.value / confirmed.value) * 100;
+  };
+  // console.log(remainInfected());
   return (
-    <div className={styles.container}>
-      <Grid container spacing={3} justify="center">
-        <Grid
-          item
-          component={Card}
-          xs={12}
-          md={3}
-          className={cx(styles.card, styles.infected)}
-        >
-          <CardContent>
-            <Typography color="textSecondary" gutterBottom>
-              Infected
-            </Typography>
-            <Typography variant="h5">
-              <CountUp
-                start={0}
-                end={confirmed.value}
-                duration={2.5}
-                separator=","
-              />
-            </Typography>
-            <Typography color="textSecondary">
-              {new Date(lastUpdate).toDateString()}
-            </Typography>
-            <Typography variant="body2">Number of cases</Typography>
-          </CardContent>
-        </Grid>
-        <Grid
-          item
-          component={Card}
-          xs={12}
-          md={3}
-          className={cx(styles.card, styles.recovered)}
-        >
-          <CardContent>
-            <Typography color="textSecondary" gutterBottom>
-              Recovered
-            </Typography>
-            <Typography variant="h5">
-              <CountUp
-                start={0}
-                end={recovered.value}
-                duration={2.5}
-                separator=","
-              />
-            </Typography>
-            <Typography color="textSecondary">
-              {new Date(lastUpdate).toDateString()}
-            </Typography>
-            <Typography variant="body2">Number of recoveries</Typography>
-          </CardContent>
-        </Grid>
-        <Grid
-          item
-          component={Card}
-          xs={12}
-          md={3}
-          className={cx(styles.card, styles.deaths)}
-        >
-          <CardContent>
-            <Typography color="textSecondary" gutterBottom>
-              Deaths
-            </Typography>
-            <Typography variant="h5">
-              <CountUp
-                start={0}
-                end={deaths.value}
-                duration={2.5}
-                separator=","
-              />
-            </Typography>
-            <Typography color="textSecondary">
-              {new Date(lastUpdate).toDateString()}
-            </Typography>
-            <Typography variant="body2">Number of deaths</Typography>
-          </CardContent>
-        </Grid>
-      </Grid>
-    </div>
+    <React.Fragment>
+      <div className={styles.lastUpdated}>
+        Last Updated: {new Date(lastUpdate).toDateString()}
+      </div>
+      <div className={styles.container}>
+        <div className={styles.infected}>
+          <div className={styles.title}>infected</div>
+          <h3>
+            <CountUp
+              start={0}
+              end={confirmed.value}
+              duration={2.5}
+              separator=","
+            />
+          </h3>
+        </div>
+        <div className={styles.recovered}>
+          <div className={styles.title}>recovered</div>
+          <h3>
+            <CountUp
+              start={0}
+              end={recovered.value}
+              duration={2.5}
+              separator=","
+            />
+          </h3>
+        </div>
+        <div className={styles.remainInfected}>
+          <div className={styles.title}>remain Infected</div>
+          <h3>
+            <CountUp
+              start={0}
+              end={remainInfected()}
+              duration={2.5}
+              separator=","
+            />
+          </h3>
+        </div>
+        <div className={styles.deaths}>
+          <div className={styles.title}>deaths</div>
+          <h3>
+            <CountUp
+              start={0}
+              end={deaths.value}
+              duration={2.5}
+              separator=","
+            />
+          </h3>
+        </div>
+        <div className={styles.stats}>
+          <div className={styles.title}>stats</div>
+          <div className={styles.title}>Deaths / infected</div>
+
+          <h3>
+            <CountUp
+              start={0}
+              end={deathsPerInfections()}
+              decimals={2}
+              suffix=" %"
+              duration={2.5}
+            />
+          </h3>
+        </div>
+      </div>
+    </React.Fragment>
   );
 };
 export default Cards;

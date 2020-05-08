@@ -14,18 +14,23 @@ const CountryPicker = ({ handleCountryChange }) => {
   }, [setFetchedCountries]);
   // console.log(fetchedCountries);
   return (
-    <FormControl className={styles.FormControl}>
-      <NativeSelect
-        defaultValue="Global"
-        onChange={(e) => handleCountryChange(e.target.value)}
-      >
-        {fetchedCountries.map((country, i) => (
-          <option key={i} value={country}>
-            {country}
-          </option>
-        ))}
-      </NativeSelect>
-    </FormControl>
+    <React.Fragment>
+      <div className={styles.inputEl}>
+        <FormControl className={styles.MuiFormControlRoot}>
+          <NativeSelect
+            defaultValue="Global"
+            onChange={(e) => handleCountryChange(e.target.value)}
+          >
+            <option value="">Global</option>
+            {fetchedCountries.map((country, i) => (
+              <option key={i} value={country}>
+                {country}
+              </option>
+            ))}
+          </NativeSelect>
+        </FormControl>
+      </div>
+    </React.Fragment>
   );
 };
 export default CountryPicker;
