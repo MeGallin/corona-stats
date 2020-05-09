@@ -10,8 +10,8 @@ body {
 }
 
 .image {
-  width: 360px;
-  margin-top: 15px;
+  width: 90px;
+  margin-top: 4px;
 }
 
 @media (max-width: 760px) {
@@ -19,6 +19,6 @@ body {
     margin: 0 10%;
   }
   .image {
-    width: 100%;
+    width: 60%;
   }
 }

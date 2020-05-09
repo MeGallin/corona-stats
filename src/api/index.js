@@ -50,3 +50,13 @@ export const fetchCountries = async () => {
     console.log(error);
   }
 };
+
+// Fetch more detailed info
+export const fetchDetailedData = async () => {
+  try {
+    const url = 'https://disease.sh/v2/countries?yesterday=true&sort=recovered';
+    return await axios.get(url);
+  } catch (error) {
+    console.log(error);
+  }
+};
