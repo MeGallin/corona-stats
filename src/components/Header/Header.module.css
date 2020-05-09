@@ -1,0 +1,25 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 1%;
+}
+.image {
+  width: 90px;
+  margin-top: 4px;
+}
+.links {
+  padding: 6px 6px;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+@media (max-width: 760px) {
+  .container {
+    margin: 0 10%;
+  }
+  .image {
+    width: 60%;
+  }
+}

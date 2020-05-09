@@ -4,17 +4,3 @@
   justify-content: center;
   flex-direction: column;
 }
-
-.image {
-  width: 90px;
-  margin-top: 4px;
-}
-
-@media (max-width: 760px) {
-  .container {
-    margin: 0 10%;
-  }
-  .image {
-    width: 60%;
-  }
-}
