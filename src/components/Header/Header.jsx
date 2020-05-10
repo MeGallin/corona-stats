@@ -17,7 +17,7 @@ const Header = () => {
             Home
           </Link>
           <Link className={styles.links} to={'/table-stats'}>
-            Table Stats
+            Stats
           </Link>
         </div>
       </header>
