@@ -54,8 +54,8 @@ export const fetchCountries = async () => {
 // Fetch more detailed info
 export const fetchDetailedData = async () => {
   try {
-    const url = 'https://disease.sh/v2/countries?yesterday=true&sort=recovered';
-    // const url = './assets/devData.json';
+    // const url = 'https://disease.sh/v2/countries?yesterday=true&sort=recovered';
+    const url = './assets/devData.json';
     const tableData = await axios.get(url);
     return tableData.data;
   } catch (error) {
