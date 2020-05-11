@@ -19,6 +19,9 @@ const Header = () => {
           <Link className={styles.links} to={'/table-stats'}>
             Stats
           </Link>
+          <Link className={styles.links} to={'/contact'}>
+            Contact
+          </Link>
         </div>
       </header>
     </React.Fragment>

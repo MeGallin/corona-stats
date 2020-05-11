@@ -5,7 +5,14 @@ import {
   Route,
   Redirect,
 } from 'react-router-dom';
-import { Header, Home, TableStats, Error404, Footer } from './components';
+import {
+  Header,
+  Home,
+  TableStats,
+  Error404,
+  Footer,
+  ContactForm,
+} from './components';
 import styles from './App.css';
 
 class App extends React.Component {
@@ -20,6 +27,7 @@ class App extends React.Component {
             </Route>
             <Route path="/home" exact={true} component={Home} />
             <Route path="/table-stats" exact={true} component={TableStats} />
+            <Route path="/contact" exact={true} component={ContactForm} />
             <Route component={Error404} />
           </Switch>
           <Footer />

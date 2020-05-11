@@ -1,0 +1,65 @@
+input,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+.contactFormWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.formInputWrapper {
+  display: flex;
+  padding: 1em;
+}
+.contactFormWrapper input[type='text'] {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+  border: none;
+}
+
+.contactFormWrapper input[type='email'] {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+  border: none;
+}
+.contactFormWrapper textarea {
+  width: 90%;
+  resize: vertical;
+  padding: 15px;
+  border-radius: 15px;
+  border: 0;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.06);
+  height: 150px;
+}
+
+.contactFormWrapper button {
+  border: 0.1em solid #ffffff;
+  padding: 0.6em 0.6em;
+  border-radius: 0.2rem;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-weight: 300;
+  color: #ffffff;
+  text-align: center;
+  font-family: inherit;
+  font-size: 1em;
+  transition: all 0.2s;
+}
+.contactFormWrapper button:hover {
+  color: black;
+  background-color: white;
+}
+
+.textMedium {
+  font-size: 0.8em;
+}
+.textSmall {
+  font-size: 0.6em;
+}
